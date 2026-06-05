@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ClashFox</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <header class="topbar">
+        <img class="brand-icon" src="../../icons/clashfox.svg" alt="">
+        <div class="title-block">
+          <div class="eyebrow">ClashFox</div>
+          <h1 id="host">正在读取...</h1>
+        </div>
+        <div id="status" class="status">
+          <span class="dot"></span>
+          <span id="statusText">等待</span>
+        </div>
+      </header>
+
+      <section class="backend-switch" aria-label="后端切换">
+        <label for="backendSelect">后端</label>
+        <select id="backendSelect"></select>
+        <div id="backendUrl" class="backend-url"></div>
+      </section>
+
+      <section class="filter-switch" aria-label="过滤模式">
+        <button type="button" data-filter-mode="domain">主域名</button>
+        <button type="button" data-filter-mode="address">完整地址</button>
+        <button type="button" data-filter-mode="all">全部</button>
+      </section>
+
+      <section class="metrics" aria-label="连接统计">
+        <div class="metric">
+          <span class="metric-value" id="matchedCount">0</span>
+          <span class="metric-label" id="matchedCountLabel">匹配</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value" id="totalCount">0</span>
+          <span class="metric-label">总连接</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value" id="matchedTraffic">0 B</span>
+          <span class="metric-label" id="trafficLabel">页面流量</span>
+        </div>
+      </section>
+
+      <section class="toolbar">
+        <button id="themeButton" class="icon-button" type="button" title="切换主题" aria-label="切换主题">◐</button>
+        <button id="refreshButton" type="button">刷新</button>
+        <button id="optionsButton" type="button">设置</button>
+      </section>
+
+      <section id="empty" class="empty" hidden>未发现匹配连接</section>
+      <section id="list" class="connection-list" aria-label="匹配连接"></section>
+    </main>
+
+    <script src="../shared.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

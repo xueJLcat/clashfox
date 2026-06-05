@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ClashFox 设置</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="options">
+      <header>
+        <div class="eyebrow">ClashFox</div>
+        <h1>mihomo 连接</h1>
+      </header>
+
+      <form id="settingsForm">
+        <section class="backend-manager" aria-label="后端管理">
+          <div class="backend-list-panel">
+            <div class="section-title">后端列表</div>
+            <div id="backendList" class="backend-list"></div>
+            <div class="backend-buttons">
+              <button id="addBackendButton" type="button">新增</button>
+              <button id="deleteBackendButton" type="button">删除</button>
+            </div>
+          </div>
+
+          <div class="backend-editor">
+            <label>
+              <span>后端名称</span>
+              <input id="backendName" name="backendName" type="text" spellcheck="false" autocomplete="off" placeholder="家里 mihomo">
+            </label>
+
+            <label>
+              <span>控制器地址</span>
+              <input id="controllerUrl" name="controllerUrl" type="text" spellcheck="false" autocomplete="off" placeholder="http://192.168.20.2:9090">
+            </label>
+
+            <label>
+              <span>Secret</span>
+              <input id="secret" name="secret" type="password" autocomplete="current-password">
+            </label>
+
+            <button id="setActiveButton" type="button">设为当前</button>
+          </div>
+        </section>
+
+        <fieldset class="theme-field">
+          <legend>主题</legend>
+          <div class="theme-segmented">
+            <label>
+              <input type="radio" name="theme" value="light">
+              <span>浅色</span>
+            </label>
+            <label>
+              <input type="radio" name="theme" value="dark">
+              <span>深色</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <label>
+          <span>刷新间隔</span>
+          <input id="refreshSeconds" name="refreshSeconds" type="number" min="1" max="60" step="1">
+        </label>
+
+        <label class="check">
+          <input id="includeSuffixMatches" name="includeSuffixMatches" type="checkbox">
+          <span>匹配同域名后缀</span>
+        </label>
+
+        <div class="actions">
+          <button id="testButton" type="button">测试连接</button>
+          <button type="submit" class="primary">保存</button>
+        </div>
+      </form>
+
+      <p id="message" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="../shared.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "ClashFox",
+  "version": "0.1.0",
+  "description": "Show mihomo connection details for the current Firefox tab.",
+  "icons": {
+    "16": "icons/clashfox.svg",
+    "32": "icons/clashfox.svg",
+    "48": "icons/clashfox.svg",
+    "96": "icons/clashfox.svg"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "src/shared.js",
+      "src/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "ClashFox",
+    "default_icon": "icons/clashfox.svg",
+    "default_popup": "src/popup/popup.html"
+  },
+  "options_ui": {
+    "page": "src/options/options.html",
+    "browser_style": true
+  },
+  "applications": {
+    "gecko": {
+      "id": "clashfox@example.local",
+      "strict_min_version": "91.0"
+    }
+  }
+}
