@@ -15,7 +15,7 @@ ClashFox 是一个免构建的 Firefox WebExtension，用来读取 mihomo 外部
 
    ```yaml
    external-controller: 192.168.20.2:9090
-   secret: "12210127"
+   secret: ""
    ```
 
 2. 打开 Firefox 的 `about:debugging#/runtime/this-firefox`。
