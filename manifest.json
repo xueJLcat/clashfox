@@ -1,19 +1,23 @@
 {
   "manifest_version": 2,
   "name": "ClashFox",
-  "version": "0.1.0",
-  "description": "Show mihomo connection details for the current Firefox tab.",
+  "version": "0.2.3",
+  "description": "Show mihomo connections with a cute cartoon ClashFox popup and current-page resource related connections.",
   "icons": {
-    "16": "icons/clashfox.svg",
-    "32": "icons/clashfox.svg",
-    "48": "icons/clashfox.svg",
-    "96": "icons/clashfox.svg"
+    "16": "icons/clashfox-design-16.png",
+    "32": "icons/clashfox-design-32.png",
+    "48": "icons/clashfox-design-48.png",
+    "96": "icons/clashfox-design-96.png",
+    "128": "icons/clashfox-design-128.png"
   },
   "permissions": [
     "tabs",
     "storage",
+    "webRequest",
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "ws://*/*",
+    "wss://*/*"
   ],
   "background": {
     "scripts": [
@@ -23,7 +27,12 @@
   },
   "browser_action": {
     "default_title": "ClashFox",
-    "default_icon": "icons/clashfox.svg",
+    "default_icon": {
+      "16": "icons/clashfox-design-16.png",
+      "32": "icons/clashfox-design-32.png",
+      "48": "icons/clashfox-design-48.png",
+      "96": "icons/clashfox-design-96.png"
+    },
     "default_popup": "src/popup/popup.html"
   },
   "options_ui": {

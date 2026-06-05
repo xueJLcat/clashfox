@@ -8,9 +8,13 @@
   </head>
   <body>
     <main class="options">
-      <header>
-        <div class="eyebrow">ClashFox</div>
-        <h1>mihomo 连接</h1>
+      <header class="options-hero">
+        <img class="options-logo" src="../../icons/clashfox-design-128.png" alt="">
+        <div>
+          <div class="eyebrow">ClashFox</div>
+          <h1>mihomo 连接</h1>
+          <p>配置后端、主题和连接匹配方式</p>
+        </div>
       </header>
 
       <form id="settingsForm">
@@ -63,10 +67,24 @@
           <input id="refreshSeconds" name="refreshSeconds" type="number" min="1" max="60" step="1">
         </label>
 
-        <label class="check">
-          <input id="includeSuffixMatches" name="includeSuffixMatches" type="checkbox">
-          <span>匹配同域名后缀</span>
-        </label>
+        <fieldset class="match-field">
+          <legend>匹配策略</legend>
+          <div class="match-segmented" role="radiogroup" aria-describedby="matchStrategyHint">
+            <label>
+              <input type="radio" name="matchStrategy" value="strict">
+              <span>严格</span>
+            </label>
+            <label>
+              <input type="radio" name="matchStrategy" value="smart">
+              <span>智能</span>
+            </label>
+            <label>
+              <input type="radio" name="matchStrategy" value="loose">
+              <span>宽松</span>
+            </label>
+          </div>
+          <p id="matchStrategyHint" class="field-hint"></p>
+        </fieldset>
 
         <div class="actions">
           <button id="testButton" type="button">测试连接</button>

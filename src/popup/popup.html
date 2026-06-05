@@ -8,53 +8,70 @@
   </head>
   <body>
     <main class="popup">
-      <header class="topbar">
-        <img class="brand-icon" src="../../icons/clashfox.svg" alt="">
+      <header class="hero">
+        <div class="spark spark-left" aria-hidden="true"></div>
+        <div class="spark spark-right" aria-hidden="true"></div>
+        <div class="sky-cloud cloud-one" aria-hidden="true"></div>
+        <div class="sky-cloud cloud-two" aria-hidden="true"></div>
+        <img class="brand-mascot" src="../../icons/clashfox-design-128.png" alt="">
         <div class="title-block">
-          <div class="eyebrow">ClashFox</div>
+          <div class="app-name">ClashFox</div>
+          <div id="status" class="status">
+            <span class="dot" aria-hidden="true"></span>
+            <span id="statusText">等待</span>
+          </div>
           <h1 id="host">正在读取...</h1>
         </div>
-        <div id="status" class="status">
-          <span class="dot"></span>
-          <span id="statusText">等待</span>
-        </div>
+        <button id="optionsButton" class="gear-button" type="button" title="设置" aria-label="设置"></button>
       </header>
 
-      <section class="backend-switch" aria-label="后端切换">
-        <label for="backendSelect">后端</label>
-        <select id="backendSelect"></select>
-        <div id="backendUrl" class="backend-url"></div>
+      <section class="content-panel">
+        <section class="backend-switch" aria-label="后端切换">
+          <label for="backendSelect">后端</label>
+          <select id="backendSelect"></select>
+          <span class="backend-badge">本地</span>
+          <div id="backendUrl" class="backend-url"></div>
+        </section>
+
+        <section class="filter-switch" aria-label="过滤模式">
+          <button type="button" data-filter-mode="domain">主域名</button>
+          <button type="button" data-filter-mode="address">完整地址</button>
+          <button type="button" data-filter-mode="resources">页面资源</button>
+          <button type="button" data-filter-mode="all">全部</button>
+        </section>
+
+        <section class="metrics" aria-label="连接统计">
+          <div class="metric metric-links">
+            <span class="metric-icon" aria-hidden="true"></span>
+            <span class="metric-label" id="matchedCountLabel">连接</span>
+            <span class="metric-value" id="matchedCount">0</span>
+          </div>
+          <div class="metric metric-total">
+            <span class="metric-icon" aria-hidden="true"></span>
+            <span class="metric-label" id="totalCountLabel">总连接</span>
+            <span class="metric-value" id="totalCount">0</span>
+          </div>
+          <div class="metric metric-traffic">
+            <span class="metric-icon" aria-hidden="true"></span>
+            <span class="metric-label" id="trafficLabel">流量</span>
+            <span class="metric-value" id="matchedTraffic">0 B</span>
+          </div>
+        </section>
+
+        <section class="toolbar">
+          <button id="themeButton" class="soft-button" data-icon="moon" type="button" title="切换主题" aria-label="切换主题">主题</button>
+          <button id="refreshButton" class="soft-button" data-icon="refresh" type="button">刷新</button>
+        </section>
+
+        <section id="empty" class="empty" hidden>未发现匹配连接</section>
+        <section id="list" class="connection-list" aria-label="匹配连接"></section>
       </section>
 
-      <section class="filter-switch" aria-label="过滤模式">
-        <button type="button" data-filter-mode="domain">主域名</button>
-        <button type="button" data-filter-mode="address">完整地址</button>
-        <button type="button" data-filter-mode="all">全部</button>
-      </section>
-
-      <section class="metrics" aria-label="连接统计">
-        <div class="metric">
-          <span class="metric-value" id="matchedCount">0</span>
-          <span class="metric-label" id="matchedCountLabel">匹配</span>
-        </div>
-        <div class="metric">
-          <span class="metric-value" id="totalCount">0</span>
-          <span class="metric-label">总连接</span>
-        </div>
-        <div class="metric">
-          <span class="metric-value" id="matchedTraffic">0 B</span>
-          <span class="metric-label" id="trafficLabel">页面流量</span>
-        </div>
-      </section>
-
-      <section class="toolbar">
-        <button id="themeButton" class="icon-button" type="button" title="切换主题" aria-label="切换主题">◐</button>
-        <button id="refreshButton" type="button">刷新</button>
-        <button id="optionsButton" type="button">设置</button>
-      </section>
-
-      <section id="empty" class="empty" hidden>未发现匹配连接</section>
-      <section id="list" class="connection-list" aria-label="匹配连接"></section>
+      <footer class="fox-footer" aria-hidden="true">
+        <span class="paw"></span>
+        <strong>ClashFox</strong>
+        <span class="paw"></span>
+      </footer>
     </main>
 
     <script src="../shared.js"></script>
