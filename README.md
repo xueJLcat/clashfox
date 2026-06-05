@@ -63,3 +63,5 @@ mihomo 的连接数据不包含 Firefox 标签页 ID，所以 ClashFox 以当前
 ## 权限说明
 
 为了让控制器地址可以配置为 `127.0.0.1`、局域网 IP、域名或 HTTPS 地址，扩展在 `manifest.json` 中申请了 `http://*/*` 与 `https://*/*` 请求权限。
+
+因为没有打包签名 所以建议使用firefox for dev 
