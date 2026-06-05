@@ -23,7 +23,7 @@ ClashFox 是一个免构建的 Firefox WebExtension，用来读取 mihomo 外部
 4. 打开扩展设置，填写 API 控制器地址和 `secret`。例如 yacd 链接里出现 `hostname=192.168.20.2&port=9090&secret=12210127` 时，这里填写：
 
    - 控制器地址：`http://192.168.20.2:9090`
-   - Secret：`12210127`
+   - Secret：``
 
 ## 当前能力
 
